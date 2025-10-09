@@ -131,7 +131,10 @@
 }
 
 .bauhaus-card {
-  @apply bg-card border border-border rounded-lg transition-all duration-300;
+  background-color: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: 0.5rem;
+  transition: all 300ms ease;
   position: relative;
   overflow: hidden;
 }
@@ -147,34 +150,32 @@
   opacity: 0.8;
 }
 
-.bauhaus-shape {
-  position: absolute;
-  opacity: 0.04;
-  z-index: 0;
-}
-
 .bauhaus-circle {
-  @apply bauhaus-shape;
+  position: absolute;
   width: 120px;
   height: 120px;
   border-radius: 50%;
   background-color: hsl(var(--primary));
   right: -40px;
   bottom: -40px;
+  opacity: 0.04;
+  z-index: 0;
 }
 
 .bauhaus-square {
-  @apply bauhaus-shape;
+  position: absolute;
   width: 80px;
   height: 80px;
   background-color: hsl(var(--secondary));
   left: -20px;
   top: -20px;
   transform: rotate(45deg);
+  opacity: 0.04;
+  z-index: 0;
 }
 
 .bauhaus-triangle {
-  @apply bauhaus-shape;
+  position: absolute;
   width: 0;
   height: 0;
   border-left: 50px solid transparent;
@@ -183,11 +184,11 @@
   opacity: 0.05;
   right: 30%;
   top: -50px;
+  z-index: 0;
 }
 
 .dropzone {
-  @apply border-2 border-dashed rounded-lg p-8 cursor-pointer transition-all duration-300 relative overflow-hidden;
-  min-height: 200px;
+  @apply border-2 border-dashed rounded-lg p-8 cursor-pointer transition-all duration-300 relative overflow-hidden min-h-[200px];
 }
 
 .dropzone.active {
