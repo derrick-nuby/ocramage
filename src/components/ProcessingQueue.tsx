@@ -16,6 +16,7 @@ import {
   CheckCircle2
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import Image from 'next/image';
 
 export default function ProcessingQueue() {
   const {
@@ -74,10 +75,12 @@ export default function ProcessingQueue() {
         {images.map(image => (
           <div key={image.id} className="bauhaus-card relative">
             <div className="relative aspect-square">
-              <img
+              <Image
                 src={image.preview}
                 alt="Preview"
+                fill
                 className="w-full h-full object-cover rounded-t-lg"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
               <Button
                 size="icon"
