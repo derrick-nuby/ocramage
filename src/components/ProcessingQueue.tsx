@@ -3,6 +3,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { useOcr, type ImageItem } from '@/context/OcrContext';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
@@ -74,10 +75,12 @@ export default function ProcessingQueue() {
         {images.map(image => (
           <div key={image.id} className="bauhaus-card relative">
             <div className="relative aspect-square">
-              <img
+              <Image
                 src={image.preview}
                 alt="Preview"
-                className="w-full h-full object-cover rounded-t-lg"
+                fill
+                className="object-cover rounded-t-lg"
+                unoptimized
               />
               <Button
                 size="icon"
